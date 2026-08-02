@@ -1,0 +1,58 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+context: |
+  Project: MFlow marketing website (mflow-web) - a static marketing site for the
+  MFlow Android app, deployed to GitHub Pages.
+
+  Tech stack: Vue 3 (Composition API) + TypeScript (strict) + Vite + Tailwind CSS
+  + Vue Router + Heroicons + @lucide/vue. No Bootstrap/Vuetify/Nuxt/Pinia.
+
+  Brand: "MFlow" - tagline "Track. Budget. Prosper." - private, offline-first,
+  AI-assisted personal finance manager for Android that reads SMS/Gmail/manual
+  entries entirely on-device. No ads, no analytics, no tracking, no selling data.
+
+  Brand assets already on disk (source of truth, to be copied into public/ and
+  src/assets/):
+    C:\Users\bhanu\Downloads\logo-light.png -> app logo for use on dark backgrounds
+    C:\Users\bhanu\Downloads\logo-dark.png  -> app logo for use on light backgrounds
+    C:\Users\bhanu\Downloads\icon.png       -> favicon / app icon / og-image source
+
+  Color palette: primary #2563EB, secondary #14B8A6, accent #22C55E,
+  background #020617, card #0F172A, border #1E293B, text white. Dark theme by
+  default (no light theme toggle required). Fonts: Inter + Manrope.
+
+  Pages required: / (landing), /privacy, /support, /terms, /404 (catch-all).
+  Landing page needs: sticky navbar, hero w/ animated gradient + phone mockup +
+  floating cards, feature grid (11 features), "Why MFlow" grid (7 reasons),
+  footer. Motion: scroll fade-ins, floating cards, gradient blobs, hover/ripple,
+  glassmorphism, page transitions - all via CSS/Vue transitions, no animation
+  libraries.
+
+  Must be production-ready: strict TypeScript, reusable components, semantic
+  HTML, accessible, SEO meta tags per page, optimized for Lighthouse >95, and
+  configured to deploy to GitHub Pages (correct Vite `base`, GH Actions workflow
+  or documented `gh-pages` deploy steps in README).
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

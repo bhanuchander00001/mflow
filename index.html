@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      GitHub Pages has no server-side rewrites, so a hard refresh on a deep
+      route like /privacy would 404. public/404.html encodes the requested
+      path as a query string and redirects here; this decodes it back into a
+      real path via history.replaceState before Vue Router ever reads the
+      URL. See: https://github.com/rafgraph/spa-github-pages
+    -->
+    <script>
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MFlow — Track. Budget. Prosper.</title>
+    <meta
+      name="description"
+      content="MFlow is a private, offline-first, AI-assisted personal finance manager for Android. Automatically organize your finances from SMS, Gmail, and manual entries — your data never leaves your device."
+    />
+    <meta name="theme-color" content="#020617" />
+    <link rel="canonical" href="https://bhanuchander00001.github.io/mflow/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MFlow" />
+    <meta property="og:title" content="MFlow — Track. Budget. Prosper." />
+    <meta
+      property="og:description"
+      content="Your private AI-powered money manager. Automatically organize your finances from SMS, Gmail and manual entries while keeping your data on your device."
+    />
+    <meta property="og:image" content="https://bhanuchander00001.github.io/mflow/og-image.png" />
+    <meta property="og:url" content="https://bhanuchander00001.github.io/mflow/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MFlow — Track. Budget. Prosper." />
+    <meta
+      name="twitter:description"
+      content="Your private AI-powered money manager. Automatically organize your finances from SMS, Gmail and manual entries while keeping your data on your device."
+    />
+    <meta name="twitter:image" content="https://bhanuchander00001.github.io/mflow/og-image.png" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Fonts: Inter (body) + Manrope (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background text-white antialiased">
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
