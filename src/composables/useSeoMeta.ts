@@ -5,7 +5,7 @@ export interface SeoMetaOptions {
 }
 
 const SITE_NAME = 'MFlow'
-const SITE_URL = 'https://bhanuchander00001.github.io/mflow'
+const SITE_URL = 'https://mflowapp.github.io/mflow'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Logo from '@/components/Logo.vue'
 
-const GITHUB_URL = 'https://github.com/bhanuchander00001/mflow'
+const GITHUB_URL = 'https://github.com/mflowapp/mflow'
 const year = new Date().getFullYear()
 
 const linkGroups = [

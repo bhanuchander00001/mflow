@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://bhanuchander00001.github.io/mflow/">Live site</a> ·
+  <a href="https://mflowapp.github.io/mflow/">Live site</a> ·
   Built with Vue 3, TypeScript, Vite, and Tailwind CSS
 </p>
 

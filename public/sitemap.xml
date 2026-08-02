@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bhanuchander00001.github.io/mflow/</loc>
+    <loc>https://mflowapp.github.io/mflow/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bhanuchander00001.github.io/mflow/privacy</loc>
+    <loc>https://mflowapp.github.io/mflow/privacy</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bhanuchander00001.github.io/mflow/support</loc>
+    <loc>https://mflowapp.github.io/mflow/support</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bhanuchander00001.github.io/mflow/terms</loc>
+    <loc>https://mflowapp.github.io/mflow/terms</loc>
     <priority>0.6</priority>
   </url>
 </urlset>

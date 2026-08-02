@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhanuchander00001.github.io/mflow/sitemap.xml
+Sitemap: https://mflowapp.github.io/mflow/sitemap.xml
