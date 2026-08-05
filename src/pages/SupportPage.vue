@@ -28,6 +28,11 @@ const faqs: FaqItem[] = [
       'MFlow degrades gracefully. Without SMS permission you can still track everything manually. Without Gmail access, Gmail import simply stays off — every permission is optional except what a specific feature you choose to use requires.',
   },
   {
+    question: 'Does MFlow support manual transactions?',
+    answer:
+      'Yes. A "+" button is available on both the Dashboard and the Transactions section to create a manual transaction at any time. This helps if a bank doesn\'t send a transaction SMS or email, or if you\'d rather not grant SMS or Gmail permission at all — MFlow works fully on manual entry alone.',
+  },
+  {
     question: 'How do I back up my data?',
     answer:
       'Open Settings → Backup & Restore → Create Backup. MFlow generates an encrypted backup file that you save wherever you like (device storage, an SD card, or a cloud drive of your choice) — MFlow itself never uploads it automatically.',
@@ -41,6 +46,11 @@ const faqs: FaqItem[] = [
     question: 'How does automatic SMS detection work?',
     answer:
       'MFlow watches for incoming SMS from recognized bank and card-issuer sender IDs, parses the amount, merchant, and account on-device, and creates a categorized transaction in your Approval Queue — which you can review and edit at any time.',
+  },
+  {
+    question: "What happens if I don't approve a transaction?",
+    answer:
+      'You can turn on auto-approve in Settings so detected transactions are approved by themselves after a time period you choose. If you leave auto-approve off, nothing is applied to your budgets or reports automatically — the transaction simply sits in your Pending Transactions list until you review and approve it yourself.',
   },
   {
     question: 'How does Gmail sync work?',

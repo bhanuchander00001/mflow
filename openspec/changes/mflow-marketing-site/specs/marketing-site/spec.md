@@ -73,23 +73,58 @@ Limited Use Statement, and a contact method. It SHALL explicitly state that
 SMS processing happens entirely on-device, SMS is never uploaded, Gmail
 access is optional, and that there are no advertisements, no analytics, no
 tracking, and no selling of user data, and that auto-approved transactions
-remain user-editable.
+remain user-editable. The Manual Transactions content SHALL confirm that
+manual entry is supported via a "+" button on both the Dashboard and the
+Transactions section, and that this is the fallback for banks that don't
+send transaction SMS/email or for users who decline SMS/Gmail permission.
+The AI Processing content SHALL explain what happens to a transaction that
+isn't approved: it is auto-approved after a user-configured time period if
+auto-approve is enabled, and otherwise sits in the Pending Transactions list
+until the user reviews it, with nothing applied to budgets or reports before
+approval. Each policy section SHALL reveal independently as the visitor
+scrolls to it, so the page is never blank on initial load while content
+further down has not yet entered the viewport.
 
 #### Scenario: Visitor reads the privacy policy
 - **WHEN** a visitor navigates to `/privacy`
 - **THEN** all listed sections are present and the on-device SMS processing,
   no-tracking, and no-data-selling statements are visible in the text
 
+#### Scenario: Visitor asks about manual transactions
+- **WHEN** a visitor reads the Manual Transactions content
+- **THEN** it confirms manual transaction entry is supported via a "+"
+  button on the Dashboard and the Transactions section, for use when SMS/
+  email isn't available or SMS/Gmail permission isn't granted
+
+#### Scenario: Visitor asks what happens without approval
+- **WHEN** a visitor reads the AI Processing content
+- **THEN** it explains that a transaction is either auto-approved after a
+  configured time period, or — if auto-approve is off — remains in Pending
+  Transactions until manually approved
+
+#### Scenario: First paint of the privacy policy page
+- **WHEN** a visitor loads `/privacy` without scrolling
+- **THEN** the page heading and the introduction section are visible
+  immediately, not blank, and each subsequent section becomes visible as the
+  visitor scrolls to it rather than all at once partway down the page
+
 ### Requirement: Support page
 The system SHALL provide a `/support` route containing a FAQ covering
-permissions, backup, restore, SMS detection, and Gmail sync, plus a visible
-contact email address for support requests.
+permissions, manual transactions, backup, restore, SMS detection, transaction
+approval, and Gmail sync, plus a visible contact email address for support
+requests. The manual transactions entry SHALL confirm that a "+" button on
+both the Dashboard and the Transactions section creates a manual transaction,
+for use when SMS/email isn't available or SMS/Gmail permission isn't
+granted. The transaction approval entry SHALL explain that a transaction is
+either auto-approved after a user-configured time period, or — if
+auto-approve is off — remains in Pending Transactions until manually
+approved.
 
 #### Scenario: Visitor looks for help
 - **WHEN** a visitor navigates to `/support`
-- **THEN** the FAQ entries for permissions, backup, restore, SMS detection,
-  and Gmail sync are visible, and a contact email is displayed as a mailto
-  link
+- **THEN** the FAQ entries for permissions, manual transactions, backup,
+  restore, SMS detection, transaction approval, and Gmail sync are visible,
+  and a contact email is displayed as a mailto link
 
 ### Requirement: Terms of Service page
 The system SHALL provide a `/terms` route containing standard terms of use:
