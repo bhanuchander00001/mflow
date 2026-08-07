@@ -18,8 +18,11 @@ import {
   Brain,
   Landmark,
   Cloud,
+  DoorOpen,
 } from '@lucide/vue'
+import { PlayCircleIcon } from '@heroicons/vue/24/solid'
 import { useSeoMeta } from '@/composables/useSeoMeta'
+import { scrollToElement } from '@/composables/useSmoothScroll'
 import type { Feature, WhyReason } from '@/types/feature'
 import AppButton from '@/components/AppButton.vue'
 import GradientBlob from '@/components/GradientBlob.vue'
@@ -38,6 +41,13 @@ useSeoMeta({
 })
 
 const PLAY_STORE_URL = '#'
+
+function scrollToFeatures(event: MouseEvent) {
+  const el = document.querySelector<HTMLElement>('#features')
+  if (!el) return
+  event.preventDefault()
+  scrollToElement(el)
+}
 
 const features: Feature[] = [
   {
@@ -138,6 +148,11 @@ const whyReasons: WhyReason[] = [
     title: 'Future Cloud Sync',
     description: 'Optional, end-to-end encrypted sync across devices is on the roadmap — opt-in only.',
   },
+  {
+    icon: DoorOpen,
+    title: 'No Account Required',
+    description: 'Start tracking your money in minutes — no sign-up, no email, no account to create.',
+  },
 ]
 </script>
 
@@ -166,9 +181,14 @@ const whyReasons: WhyReason[] = [
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <AppButton as="a" :href="PLAY_STORE_URL" target="_blank" size="lg">
+              <template #icon-left>
+                <PlayCircleIcon class="h-6 w-6" />
+              </template>
               Download on Google Play
             </AppButton>
-            <AppButton as="a" href="#features" variant="ghost" size="lg">See features</AppButton>
+            <AppButton as="a" href="#features" variant="ghost" size="lg" @click="scrollToFeatures">
+              See features
+            </AppButton>
           </div>
         </RevealSection>
 
@@ -240,6 +260,9 @@ const whyReasons: WhyReason[] = [
         </p>
         <div class="relative mt-8 flex justify-center">
           <AppButton as="a" :href="PLAY_STORE_URL" target="_blank" size="lg">
+            <template #icon-left>
+              <PlayCircleIcon class="h-6 w-6" />
+            </template>
             Download on Google Play
           </AppButton>
         </div>

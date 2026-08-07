@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { scrollToHash } from '@/composables/useSmoothScroll'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +32,10 @@ const router = createRouter({
   ],
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) return savedPosition
-    if (to.hash) return { el: to.hash, behavior: 'smooth', top: 96 }
+    if (to.hash) {
+      scrollToHash(to.hash)
+      return false
+    }
     return { top: 0 }
   },
 })

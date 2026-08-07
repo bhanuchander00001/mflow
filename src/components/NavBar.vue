@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { PlayCircleIcon } from '@heroicons/vue/24/solid'
 import Logo from '@/components/Logo.vue'
 import AppButton from '@/components/AppButton.vue'
 
@@ -45,7 +46,12 @@ watch(
         </div>
 
         <div class="hidden md:block">
-          <AppButton as="a" :href="PLAY_STORE_URL" target="_blank">Download on Google Play</AppButton>
+          <AppButton as="a" :href="PLAY_STORE_URL" target="_blank">
+            <template #icon-left>
+              <PlayCircleIcon class="h-5 w-5" />
+            </template>
+            Download on Google Play
+          </AppButton>
         </div>
 
         <button
@@ -78,6 +84,9 @@ watch(
             {{ link.label }}
           </router-link>
           <AppButton as="a" :href="PLAY_STORE_URL" target="_blank" class="mt-1 w-full">
+            <template #icon-left>
+              <PlayCircleIcon class="h-5 w-5" />
+            </template>
             Download on Google Play
           </AppButton>
         </div>

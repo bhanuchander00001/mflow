@@ -6,7 +6,7 @@ defineProps<{ reason: WhyReason }>()
 
 <template>
   <div
-    class="flex items-start gap-4 rounded-2xl border border-border bg-gradient-to-b from-card to-card/40 p-5 transition-colors duration-300 hover:border-accent/50"
+    class="flex h-full items-start gap-4 rounded-2xl border border-border bg-gradient-to-b from-card to-card/40 p-5 transition-colors duration-300 hover:border-accent/50"
   >
     <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
       <component :is="reason.icon" class="h-5 w-5" />
